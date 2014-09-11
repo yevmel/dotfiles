@@ -1,0 +1,9 @@
+[user]
+	email = yevgeniy.melnichuk@googlemail.com
+	name = Yevgeniy Melnichuk
+
+[core]
+	excludesfile = ~/.gitignore
+
+[push]
+	default = simple
