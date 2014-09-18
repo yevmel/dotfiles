@@ -26,10 +26,10 @@ append_source() {
     fi
 }
 
-for f in {vimrc,gitignore,gitconfig}; do
+for f in {vimrc,gitignore,gitconfig,bash_profile}; do
     link_file $PWD/home/$f $HOME_DIR/.$f
 done
 
-for f in {bashrc,bash_profile}; do
+for f in {bashrc,}; do
     append_source $PWD/home/$f $HOME_DIR/.$f
 done
