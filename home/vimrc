@@ -21,3 +21,5 @@ set ignorecase
 
 " enable syntax highlighting
 syntax on
+
+set background=dark

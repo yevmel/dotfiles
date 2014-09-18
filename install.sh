@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 
-link() {
+source setup-install.sh
+
+link_file() {
 	FROM=$1
 	TO=$2
 
+	echo "[i] creating link from $FROM to $TO"
+
     if [ -a $TO ] &&  [ ! -h $TO ]; then
-        ln -sb -S .bak $FROM $TO
+        $SLINK_WITH_BAK $FROM $TO
     else
-	    ln -sf $FROM $TO
+        $SLINK $FROM $TO
     fi
 }
 
@@ -22,13 +26,10 @@ append_source() {
     fi
 }
 
-SCRIPT_PATH=$(readlink -f $0)
-SCRIPT_DIR=$(dirname $SCRIPT_PATH)
-
 for f in {vimrc,gitignore,gitconfig}; do
-    link $SCRIPT_DIR/home/$f ~/.$f
+    link_file $PWD/home/$f $HOME_DIR/.$f
 done
 
-for f in {bashrc,}; do
-    append_source $SCRIPT_DIR/home/$f ~/.$f
+for f in {bashrc,bash_profile}; do
+    append_source $PWD/home/$f $HOME_DIR/.$f
 done
