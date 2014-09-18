@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source setup-install.sh
+source ./setenv.$(uname -s).sh
 
 link_file() {
 	FROM=$1
