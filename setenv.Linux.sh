@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-SLINK="ln -sf"
-SLINK_WITH_BAK="ln -sb -S .bak"
+LINK_FILE() {
+    FROM=$1
+    TO=$2
+
+    echo "creating link from $FROM to $TO"
+    ln -sb -S .bak $FROM $TO
+}
 
 source ./setenv.sh
