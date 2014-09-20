@@ -2,7 +2,10 @@
 
 .project
 .classpath
-.settings
+
+# breaks eclipse-workspace in my dotfiles... put .settings in the individual gitignore
+# .settings
+
 bin
 
 .DS_Store
