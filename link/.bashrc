@@ -32,6 +32,21 @@ printManifestFromZip() {
     printFileFromZip "META-INF/MANIFEST.MF" $_ZIP
 }
 
+gdw() {
+    _GDW_DIR=$(pwd)
+
+    while [ "$_GDW_DIR" != "/" ]; do
+        _GDW_PATH="$_GDW_DIR/gradlew"
+        if [ -f $_GDW_PATH ]; then
+            $_GDW_PATH "$@"
+            break;
+        fi
+
+        _GDW_DIR=$(dirname $_GDW_DIR)
+        echo $_GDW_DIR
+    done
+}
+
 if [ -f ~/.bashrc.custom ]; then
     source ~/.bashrc.custom
 fi
