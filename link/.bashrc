@@ -38,7 +38,7 @@ gdw() {
     while [ "$_GDW_DIR" != "/" ]; do
         _GDW_PATH="$_GDW_DIR/gradlew"
         if [ -f $_GDW_PATH ]; then
-            $_GDW_PATH "$@"
+            $_GDW_PATH --stacktrace"$@"
             break;
         fi
 
