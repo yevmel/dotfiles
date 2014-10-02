@@ -16,9 +16,6 @@ case "$(uname -s)" in
     ;;
 esac
 
-#
-# custom functions
-#
 printFileFromZip() {
     _FILE=$1
     _ZIP=$2
@@ -45,6 +42,21 @@ gdw() {
         _GDW_DIR=$(dirname $_GDW_DIR)
         echo $_GDW_DIR
     done
+}
+
+initEclipseWorkspace() {
+    _DIR=$1
+
+    if [ -z "$_DIR" ]; then
+        _DIR=$(pwd)
+    fi
+
+    mkdir -p $_DIR
+    cp -r $DOTFILES/eclipse-workspace/. $_DIR/
+}
+
+iEW() {
+    initEclipseWorkspace $@
 }
 
 if [ -f ~/.bashrc.custom ]; then
