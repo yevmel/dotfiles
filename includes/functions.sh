@@ -1,14 +1,17 @@
 #!/bin/bash
 
 moveToTrash() {
-    _FROM=$1
-    _TO=~/.Trash/$(basename $_FROM)
+    _FROM=$@
 
-    if [ -a $_TO ]; then
-        _TO="$_TO $(date +"%T")"
-    fi
+    for f in $(ls $_FROM); do
+        _TO=~/.Trash/$(basename $f)
 
-    mv "$_FROM" "$_TO"
+        if [ -a $_TO ]; then
+            _TO="$_TO $(date +"%T")"
+        fi
+
+        mv "$f" "$_TO"
+    done
 }
 
 printFileFromZip() {
