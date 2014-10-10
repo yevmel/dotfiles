@@ -3,7 +3,7 @@
 moveToTrash() {
     _FROM=$@
 
-    for f in $(ls $_FROM); do
+    for f in $_FROM; do
         _TO=~/.Trash/$(basename $f)
 
         if [ -a $_TO ]; then
