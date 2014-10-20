@@ -11,5 +11,12 @@ bin/
 # mac os
 .DS_Store
 
-#vim
+# vim
 .*.swp
+
+# gradle
+.gradle
+build/
+
+# mvn
+target/
