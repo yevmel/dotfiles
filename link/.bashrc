@@ -9,3 +9,4 @@ _OS=$(uname -s)
 
 source $DOTFILES/includes/functions.$_OS.sh
 source $DOTFILES/includes/alias.$_OS.sh
+source $DOTFILES/includes/misc.$_OS.sh
