@@ -1,2 +1,4 @@
 # rbenv
-PATH="~/.rbenv/shims:~/.rbenv/versions/$(cat ~/.rbenv/version)/bin:$PATH"
+if [ -a ~/.rbenv/version ]; then
+    PATH="~/.rbenv/shims:~/.rbenv/versions/$(cat ~/.rbenv/version)/bin:$PATH"
+fi
