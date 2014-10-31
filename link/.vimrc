@@ -3,12 +3,8 @@ set number
 
 " one tab is equals four spaces
 set tabstop=4
-
-" TODO
+set shiftwidth=4
 set expandtab
-
-" TODO
-set autoindent
 
 " highlight search results
 set hlsearch
