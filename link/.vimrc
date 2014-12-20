@@ -19,3 +19,5 @@ set ignorecase
 syntax on
 
 set background=dark
+
+map <F2> :Explore<CR>
