@@ -23,3 +23,6 @@ target/
 
 # compass
 .sass-cache/
+
+# local npm packages
+node_modules/
