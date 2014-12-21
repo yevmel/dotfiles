@@ -20,4 +20,8 @@ syntax on
 
 set background=dark
 
-map <F2> :Explore<CR>
+map <F2> :NERDTree<CR>
+map <F1> <C-W><C-W>
+
+" vim pathogen
+execute pathogen#infect()
