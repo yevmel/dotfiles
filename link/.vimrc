@@ -20,10 +20,10 @@ syntax on
 
 set background=dark
 
-map <F2> :NERDTree<CR>
-map <F1> <C-W><C-W>
-map - :vertical resize -5<CR>
-map + :vertical resize +5<CR>
+nnoremap <F2> :NERDTree<CR>
+nnoremap <F1> <C-W><C-W>
+nnoremap - :vertical resize -5<CR>
+nnoremap + :vertical resize +5<CR>
 
 " vim pathogen
 execute pathogen#infect()
