@@ -27,3 +27,18 @@ map + :vertical resize +5<CR>
 
 " vim pathogen
 execute pathogen#infect()
+
+
+
+
+
+
+
+function RemoveTrailingWhitespace()
+    if !&binary
+        normal! mz
+        %s/\s\+$//ge
+        normal! 'z
+    endif
+endfunction
+autocmd BufWritePre * :call RemoveTrailingWhitespace()
