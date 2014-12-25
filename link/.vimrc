@@ -20,19 +20,17 @@ syntax on
 
 set background=dark
 
+" vim pathogen
+execute pathogen#infect()
+
 nnoremap <F2> :NERDTree<CR>
 nnoremap <F1> <C-W><C-W>
 nnoremap - :vertical resize -5<CR>
 nnoremap + :vertical resize +5<CR>
 
-" vim pathogen
-execute pathogen#infect()
-
-
-
-
-
-
+" blockwise indent
+xnoremap <TAB> >gv
+xnoremap <S-TAB> <gv
 
 function RemoveTrailingWhitespace()
     if !&binary
@@ -41,4 +39,6 @@ function RemoveTrailingWhitespace()
         normal! 'z
     endif
 endfunction
+
 autocmd BufWritePre * :call RemoveTrailingWhitespace()
+autocmd BufWritePre * :retab
