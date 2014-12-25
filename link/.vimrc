@@ -1,6 +1,13 @@
 " show line numbers
 set number
 
+" enable statusline
+set laststatus=2
+
+set statusline=%t " filename
+set statusline+=\ (%{&ff}) " fileformat
+set statusline+=\ %4l/%L\ %3c " cursor position, current line/nr. of lines
+
 " one tab is equals four spaces
 set tabstop=4
 set shiftwidth=4
