@@ -23,6 +23,14 @@ set background=dark
 " vim pathogen
 execute pathogen#infect()
 
+highlight ExtraWhitespace ctermbg=red guibg=red
+
+" highlight trailing spaces
+call matchadd("ExtraWhitespace", "\\s\\+$")
+
+" highlight tabs
+call matchadd("ExtraWhitespace", "\\t")
+
 nnoremap <F2> :NERDTree<CR>
 nnoremap <F1> <C-W><C-W>
 nnoremap - :vertical resize -5<CR>
