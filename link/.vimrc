@@ -1,51 +1,68 @@
-" show line numbers
-set number
+set nocompatible
+filetype off
 
-" enable statusline
-set laststatus=2
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-set statusline=%t " filename
-set statusline+=\ (%{&ff}) " fileformat
-set statusline+=\ %4l/%L\ %3c " cursor position, current line/nr. of lines
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'terryma/vim-expand-region'
 
-" one tab is equals four spaces
-set tabstop=4
-set shiftwidth=4
-set expandtab
+call vundle#end()
+filetype plugin on
 
-" highlight search results
-set hlsearch
+function SetupCustomMappings()
+    let g:mapleader = " "
 
-" search as you type
-set incsearch
+    nnoremap <Leader>w :w<CR>
+    nnoremap <F2> :NERDTree<CR>
+    nnoremap <F1> <C-W><C-W>
+    nnoremap - :vertical resize -5<CR>
+    nnoremap + :vertical resize +5<CR>
 
-" case insensitive search
-set ignorecase
+    xnoremap <TAB> >gv
+    xnoremap <S-TAB> <gv
+endfunction
+call SetupCustomMappings()
 
-" enable syntax highlighting
-syntax on
+function SetupCustomSettings()
+    set number
+    set laststatus=2
+    set tabstop=4
+    set shiftwidth=4
+    set expandtab
+    set hlsearch
+    set incsearch
+    set ignorecase
+    set background=dark
+    set diffopt+=vertical
+    syntax on
+endfunction
+call SetupCustomSettings()
 
-set background=dark
+function SetupPluginAirline()
+    let g:airline_right_sep=''
+    let g:airline_left_sep=''
+    let g:airline#extensions#whitespace#enabled=0
+endfunction
+call SetupPluginAirline()
 
-" vim pathogen
-execute pathogen#infect()
+function SetupCustomMatches()
+    highlight ExtraWhitespace ctermbg=red guibg=red
 
-highlight ExtraWhitespace ctermbg=red guibg=red
+    " highlight trailing spaces
+    autocmd BufWinEnter * call matchadd("ExtraWhitespace", "\\s\\+$")
 
-" highlight trailing spaces
-call matchadd("ExtraWhitespace", "\\s\\+$")
+    " highlight tabs
+    autocmd BufWinEnter * call matchadd("ExtraWhitespace", "\\t")
 
-" highlight tabs
-call matchadd("ExtraWhitespace", "\\t")
+    " clear matches when leavin a buffer... they will be reinitialized next time you open a buffer
+    autocmd BufWinLeave * call clearmatches()
+endfunction
+call SetupCustomMatches()
 
-nnoremap <F2> :NERDTree<CR>
-nnoremap <F1> <C-W><C-W>
-nnoremap - :vertical resize -5<CR>
-nnoremap + :vertical resize +5<CR>
-
-" blockwise indent
-xnoremap <TAB> >gv
-xnoremap <S-TAB> <gv
 
 function RemoveTrailingWhitespace()
     if !&binary
