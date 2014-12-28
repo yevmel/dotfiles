@@ -56,18 +56,30 @@ function! SetupPluginAirline()
 endfunction
 call SetupPluginAirline()
 
+function! AddCustomMatches()
+    let b:custom_matches = []
+
+    " highlight trailing spaces
+    call add(b:custom_matches, matchadd("ExtraWhitespace", "\\s\\+$"))
+
+    " highlight tabs
+    call add(b:custom_matches, matchadd("ExtraWhitespace", "\\t"))
+endfunction
+
+function! DeleteCustomMatchces()
+    for m in b:custom_matches
+        call matchdelete(m)
+    endfor
+
+    unlet b:custom_matches
+endfunction
+
 function! SetupCustomMatches()
     highlight ExtraWhitespace ctermbg=red guibg=red
 
     augroup CustomMatches
-        " highlight trailing spaces
-        autocmd BufWinEnter * call matchadd("ExtraWhitespace", "\\s\\+$")
-
-        " highlight tabs
-        autocmd BufWinEnter * call matchadd("ExtraWhitespace", "\\t")
-
-        " clear matches when leavin a buffer... they will be reinitialized next time you open a buffer
-        autocmd BufWinLeave * call clearmatches()
+        autocmd BufWinEnter * call AddCustomMatches()
+        autocmd BufWinLeave * call DeleteCustomMatchces()
     augroup END
 endfunction
 call SetupCustomMatches()
