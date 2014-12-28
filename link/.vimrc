@@ -16,11 +16,16 @@ filetype plugin on
 function SetupCustomMappings()
     let g:mapleader = " "
 
+    " highlight without moving to the next match
+    nnoremap # :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
+
     nnoremap <Leader>w :w<CR>
+    nnoremap <Leader>q :q<CR>
+    nnoremap <Leader>- :vertical resize -10<CR>
+    nnoremap <Leader>+ :vertical resize +10<CR>
+
     nnoremap <F2> :NERDTree<CR>
     nnoremap <F1> <C-W><C-W>
-    nnoremap - :vertical resize -5<CR>
-    nnoremap + :vertical resize +5<CR>
 
     xnoremap <TAB> >gv
     xnoremap <S-TAB> <gv
