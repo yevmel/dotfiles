@@ -13,7 +13,7 @@ Plugin 'terryma/vim-expand-region'
 call vundle#end()
 filetype plugin on
 
-function SetupCustomMappings()
+function! SetupCustomMappings()
     let g:mapleader = " "
 
     " highlight without moving to the next match
@@ -32,7 +32,7 @@ function SetupCustomMappings()
 endfunction
 call SetupCustomMappings()
 
-function SetupCustomSettings()
+function! SetupCustomSettings()
     set number
     set laststatus=2
     set tabstop=4
@@ -47,7 +47,7 @@ function SetupCustomSettings()
 endfunction
 call SetupCustomSettings()
 
-function SetupPluginAirline()
+function! SetupPluginAirline()
     let g:airline_right_sep=''
     let g:airline_left_sep=''
     let g:airline_branch_prefix='⎇'
@@ -55,22 +55,24 @@ function SetupPluginAirline()
 endfunction
 call SetupPluginAirline()
 
-function SetupCustomMatches()
+function! SetupCustomMatches()
     highlight ExtraWhitespace ctermbg=red guibg=red
 
-    " highlight trailing spaces
-    autocmd BufWinEnter * call matchadd("ExtraWhitespace", "\\s\\+$")
+    augroup CustomMatches
+        " highlight trailing spaces
+        autocmd BufWinEnter * call matchadd("ExtraWhitespace", "\\s\\+$")
 
-    " highlight tabs
-    autocmd BufWinEnter * call matchadd("ExtraWhitespace", "\\t")
+        " highlight tabs
+        autocmd BufWinEnter * call matchadd("ExtraWhitespace", "\\t")
 
-    " clear matches when leavin a buffer... they will be reinitialized next time you open a buffer
-    autocmd BufWinLeave * call clearmatches()
+        " clear matches when leavin a buffer... they will be reinitialized next time you open a buffer
+        autocmd BufWinLeave * call clearmatches()
+    augroup END
 endfunction
 call SetupCustomMatches()
 
 
-function RemoveTrailingWhitespace()
+function! RemoveTrailingWhitespace()
     if !&binary
         normal! mz
         %s/\s\+$//ge
@@ -78,5 +80,7 @@ function RemoveTrailingWhitespace()
     endif
 endfunction
 
-autocmd BufWritePre * :call RemoveTrailingWhitespace()
-autocmd BufWritePre * :retab
+augroup SaveActions
+    autocmd BufWritePre * :call RemoveTrailingWhitespace()
+    autocmd BufWritePre * :retab
+augroup END
