@@ -1,13 +1,17 @@
 [user]
-	email = yevgeniy.melnichuk@googlemail.com
-	name = Yevgeniy Melnichuk
+    email = yevgeniy.melnichuk@googlemail.com
+    name = Yevgeniy Melnichuk
 
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
+    editor = vim
 
 [push]
-	default = simple
+    default = simple
 [filter "media"]
-	required = true
+    required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
+
+[diff]
+    tool = vimdiff
