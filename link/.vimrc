@@ -45,6 +45,7 @@ call SetupCustomSettings()
 function SetupPluginAirline()
     let g:airline_right_sep=''
     let g:airline_left_sep=''
+    let g:airline_branch_prefix='⎇'
     let g:airline#extensions#whitespace#enabled=0
 endfunction
 call SetupPluginAirline()
