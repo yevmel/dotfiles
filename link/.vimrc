@@ -78,6 +78,7 @@ function! SetupCustomMatches()
     highlight ExtraWhitespace ctermbg=red guibg=red
 
     augroup CustomMatches
+        autocmd!
         autocmd BufWinEnter * call AddCustomMatches()
         autocmd BufWinLeave * call DeleteCustomMatchces()
     augroup END
@@ -94,6 +95,7 @@ function! RemoveTrailingWhitespace()
 endfunction
 
 augroup SaveActions
+    autocmd!
     autocmd BufWritePre * :call RemoveTrailingWhitespace()
     autocmd BufWritePre * :retab
 augroup END
