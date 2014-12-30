@@ -9,6 +9,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-expand-region'
+Plugin 'yevmel/vim-matching-counterpart'
 
 call vundle#end()
 filetype plugin on
