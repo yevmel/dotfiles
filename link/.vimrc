@@ -18,7 +18,7 @@ function! SetupCustomMappings()
     let g:mapleader = " "
 
     " highlight without moving to the next match
-    nnoremap # :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
+    nnoremap <silent> # :let @/ = '\<'.expand('<cword>').'\>'\|set hlsearch<C-M>
 
     nnoremap <Leader>w :w<CR>
     nnoremap <Leader>q :q<CR>
