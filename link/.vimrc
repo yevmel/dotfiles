@@ -23,6 +23,8 @@ function! SetupCustomMappings()
     nnoremap <Leader>q :q<CR>
     nnoremap <Leader>- :vertical resize -10<CR>
     nnoremap <Leader>+ :vertical resize +10<CR>
+    nnoremap <Leader>_ :resize -10<CR>
+    nnoremap <Leader>* :resize +10<CR>
     nnoremap <Leader>so :so %<CR>
 
     nnoremap <F2> :NERDTree<CR>
