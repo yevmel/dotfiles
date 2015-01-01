@@ -106,3 +106,5 @@ augroup SaveActions
     autocmd BufWritePre * :call RemoveTrailingWhitespace()
     autocmd BufWritePre * :retab
 augroup END
+
+let g:debug_matching_counterpart=1
