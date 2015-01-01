@@ -70,6 +70,10 @@ function! AddCustomMatches()
 endfunction
 
 function! DeleteCustomMatchces()
+    if !exists("b:custom_matches")
+        return
+    endif
+
     for m in b:custom_matches
         call matchdelete(m)
     endfor
