@@ -23,5 +23,3 @@ COPY_FILE() {
     echo "creating link from $_FROM to $_TO"
     cp -r $_FROM $_TO
 }
-
-source ./setenv.sh
