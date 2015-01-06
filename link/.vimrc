@@ -10,6 +10,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
 Plugin 'terryma/vim-expand-region'
 Plugin 'yevmel/vim-matching-counterpart'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 filetype plugin on
