@@ -20,6 +20,6 @@ COPY_FILE() {
         mv $_TO $_TO.bak
     fi
 
-    echo "creating link from $_FROM to $_TO"
+    echo "copying $_FROM to $_TO"
     cp -r $_FROM $_TO
 }
