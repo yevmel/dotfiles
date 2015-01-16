@@ -10,4 +10,8 @@ fi
 
 # nvm
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+NVM_PATH="$(brew --prefix nvm)/nvm.sh"
+if [ -a $NVM_PATH ]; then
+    source "$NVM_PATH"
+fi
+
