@@ -26,3 +26,6 @@ target/
 
 # local npm packages
 node_modules/
+
+# vagrant
+.vagrant/
