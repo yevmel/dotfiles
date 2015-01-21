@@ -1,6 +1,6 @@
 [user]
-    email = yevgeniy.melnichuk@googlemail.com
-    name = Yevgeniy Melnichuk
+	email = henning.treu@googlemail.com
+	name = Henning Treu
 
 [core]
     excludesfile = ~/.gitignore
