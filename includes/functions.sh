@@ -3,10 +3,10 @@
 moveToTrash() {
     _FROM=$@
 
-    for f in $_FROM; do
-        _TO=~/.Trash/$(basename $f)
+    for f in "$_FROM"; do
+        _TO=~/.Trash/$(basename "$f")
 
-        if [ -a $_TO ]; then
+        if [ -a "$_TO" ]; then
             _TO="$_TO $(date +"%T")"
         fi
 
@@ -56,4 +56,3 @@ initEclipseWorkspace() {
 iEW() {
     initEclipseWorkspace $@
 }
-
