@@ -56,3 +56,13 @@ initEclipseWorkspace() {
 iEW() {
     initEclipseWorkspace $@
 }
+
+initAnsibleRoles() {
+    for role in "$@"; do
+        mkdir -p "$role"/{defaults,tasks,templates}
+    done
+}
+
+iAR() {
+    initAnsibleRoles "$@"
+}
