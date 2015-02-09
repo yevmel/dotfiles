@@ -3,10 +3,10 @@
 moveToTrash() {
     _FROM=$@
 
-    for f in $_FROM; do
-        _TO=~/.Trash/$(basename $f)
+    for f in "$_FROM"; do
+        _TO=~/.Trash/$(basename "$f")
 
-        if [ -a $_TO ]; then
+        if [ -a "$_TO" ]; then
             _TO="$_TO $(date +"%T")"
         fi
 
@@ -27,6 +27,8 @@ printManifestFromZip() {
     printFileFromZip "META-INF/MANIFEST.MF" $_ZIP
 }
 
+# traverse the directory hierarchy up until finds a gradlew file and executes
+# it with arguments supplied by user
 gdw() {
     _GDW_DIR=$(pwd)
 
@@ -42,6 +44,8 @@ gdw() {
     done
 }
 
+# created a preconfigured eclipse workspace
+# work in progress :)
 initEclipseWorkspace() {
     _DIR=$1
 
@@ -57,3 +61,12 @@ iEW() {
     initEclipseWorkspace $@
 }
 
+initAnsibleRoles() {
+    for role in "$@"; do
+        mkdir -p "$role"/{defaults,tasks,templates}
+    done
+}
+
+iAR() {
+    initAnsibleRoles "$@"
+}

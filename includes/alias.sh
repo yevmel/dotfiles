@@ -8,6 +8,10 @@ alias rm=moveToTrash
 
 alias grep="grep --color=auto"
 
+# -P   : display port numbers instead of service names
+# +c 0 : display the whole name of process
+alias lsof="lsof +c 0 -P"
+
 PYTHON_VERSION=`python --version 2>&1`
 PYTHON_VERSION=${PYTHON_VERSION:7}
 if [[ $PYTHON_VERSION =~ ^2. ]]; then

@@ -6,6 +6,9 @@ fi
 
 _OS=$(uname -s)
 
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 source $DOTFILES/includes/colors.sh
 source $DOTFILES/includes/git-prompt.sh
 
@@ -16,4 +19,4 @@ source $DOTFILES/includes/misc.$_OS.sh
 source $DOTFILES/includes/functions.$_OS.sh
 source $DOTFILES/includes/alias.$_OS.sh
 
-PS1="${Yellow}\\h ${White}[${Green}\\u ${Blue}\\w${White}]\$(__git_ps1 ' ⎇ %s') ${Color_Off}\$ "
+PS1="${Yellow}\\h \D{%T} ${White}[${Green}\\u ${Blue}\\w${White}]\$(__git_ps1 ' ⎇ %s') ${Color_Off}\$ "

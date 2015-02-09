@@ -4,6 +4,7 @@
 .project
 .classpath
 bin/
+.settings/
 
 # breaks eclipse-workspace in my dotfiles... put .settings in the individual gitignore
 # .settings
@@ -26,3 +27,6 @@ target/
 
 # local npm packages
 node_modules/
+
+# vagrant
+.vagrant/
