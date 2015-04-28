@@ -15,3 +15,4 @@ if [ -a $NVM_PATH ]; then
     source "$NVM_PATH"
 fi
 
+nvm use stable

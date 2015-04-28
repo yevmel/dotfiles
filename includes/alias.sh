@@ -4,8 +4,6 @@ alias ll="ls -l"
 alias la="ls -a"
 alias lsz="unzip -l"
 
-alias rm=moveToTrash
-
 alias grep="grep --color=auto"
 
 # -P   : display port numbers instead of service names
