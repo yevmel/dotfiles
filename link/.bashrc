@@ -9,6 +9,7 @@ _OS=$(uname -s)
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+source $DOTFILES/includes/exports.$_OS.sh
 source $DOTFILES/includes/colors.sh
 source $DOTFILES/includes/git-prompt.sh
 
