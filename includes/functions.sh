@@ -17,11 +17,15 @@ printManifestFromZip() {
 # it with arguments supplied by user
 gdw() {
     _GDW_DIR=$(pwd)
-
+    _GDW_INIT=""
     while [ "$_GDW_DIR" != "/" ]; do
         _GDW_PATH="$_GDW_DIR/gradlew"
         if [ -f $_GDW_PATH ]; then
-            $_GDW_PATH --stacktrace "$@"
+            if [ -f $_GDW_DIR/init.gradle ]; then
+                _GDW_INIT="-I $_GDW_DIR/init.gradle"
+            fi
+            echo $_GDW_PATH --stacktrace $_GDW_INIT $@
+            $_GDW_PATH --stacktrace $_GDW_INIT "$@"
             break;
         fi
 
