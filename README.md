@@ -1,3 +1,8 @@
+dotfiles
+--------------
+
+a set of individual config files.
+
 install Vundle
 --------------
 
