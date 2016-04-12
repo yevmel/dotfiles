@@ -1,0 +1,28 @@
+.svn
+
+# eclipse
+.project
+.classpath
+bin/
+.settings/
+
+# mac os
+.DS_Store
+
+# vim
+.*.swp
+
+# gradle
+build/
+
+# mvn
+target/
+
+# compass
+.sass-cache/
+
+# local npm packages
+node_modules/
+
+# vagrant
+.vagrant/
