@@ -14,9 +14,9 @@ source $HOME/.git-prompt.sh
 
 PS1="\n${Yellow}\\h \D{%T} ${White}[${Green}\\u ${Blue}\\w${White}]\$(__git_ps1 ' ⎇ %s') \n⇨ ${Color_Off}"
 
-if [ $_OS == 'Linux' ]; then
+if [ $_OS = 'Linux' ]; then
     alias ls="ls --color=auto -h"
-else if [ $_OS == 'Darwin' ]; then
+elif [ $_OS = 'Darwin' ]; then
     alias ls="ls -hG"
 else
     echo "[!] unknow OS $_OS"
