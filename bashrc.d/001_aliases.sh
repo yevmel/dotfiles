@@ -8,10 +8,7 @@ else
     echo "[!] unknow OS $_OS"
 fi
 
-# dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-
-alias ll="ls -l"
+alias ll="ls -lh"
 alias la="ls -a"
 
 # -P   : display port numbers instead of service names
@@ -19,3 +16,4 @@ alias la="ls -a"
 alias lsof="lsof +c 0 -P"
 
 alias prettyjson='python -m json.tool'
+

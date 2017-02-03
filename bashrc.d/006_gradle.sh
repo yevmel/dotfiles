@@ -1,19 +1,4 @@
-#/bin/bash
-
 #!/bin/bash
-
-printFileFromZip() {
-    _FILE=$1
-    _ZIP=$2
-
-    unzip -q -c $_ZIP $_FILE
-}
-
-printManifestFromZip() {
-    _ZIP=$1
-
-    printFileFromZip "META-INF/MANIFEST.MF" $_ZIP
-}
 
 # traverse the directory hierarchy up until finds a gradlew file and executes
 # it with arguments supplied by user
@@ -34,23 +19,5 @@ gdw() {
         _GDW_DIR=$(dirname $_GDW_DIR)
         echo $_GDW_DIR
     done
-}
-
-initAnsibleRoles() {
-    for role in "$@"; do
-        mkdir -p "$role"/{files,templates,tasks,handlers,vars,defaults,meta}
-    done
-}
-
-iAR() {
-    initAnsibleRoles "$@"
-}
-
-svnRemoveUntrackedFiles() {
-    svn st | grep '^?' | awk '{print $2}' | xargs rm -rf
-}
-
-svnAddUntrackedFiles() {
-    svn st | grep '^?' | awk '{print $2}' | xargs svn add
 }
 

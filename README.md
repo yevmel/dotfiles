@@ -13,7 +13,4 @@ install Vundle
 setup dotfiles
 --------------
 
-    alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-    dotfiles config status.showUntrackedFiles no
-    cd && dotfiles checkout -f
-
+    ./install.sh

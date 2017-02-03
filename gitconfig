@@ -20,3 +20,6 @@
     required = true
 [fetch]
    prune = true
+
+[alias]
+    loga = log --first-parent -20 --format=\"%C(yellow)%h %C(red)%cd %C(green)%<(18,trunc)%cn %C(reset)%s\" --date=\"format:%d %b %H:%M:%S\"

@@ -24,4 +24,3 @@ if [ -d "$HOME/.nvm" ]; then
     . "$NVM_DIR/nvm.sh"
 fi
 
-export SVN_EDITOR=vim
