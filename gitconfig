@@ -5,6 +5,7 @@
 [core]
     excludesfile = ~/.gitignore
     editor = vim
+    autocrlf = true
 
 [push]
     default = simple
@@ -22,4 +23,6 @@
    prune = true
 
 [alias]
-    loga = log --first-parent -20 --format=\"%C(yellow)%h %C(red)%cd %C(green)%<(18,trunc)%cn %C(reset)%s\" --date=\"format:%d %b %H:%M:%S\"
+    loga  = log --graph --format=\"%C(yellow)%h %C(red)%cd %C(reset)%s\" --date=\"format:%d %b %H:%M:%S\"
+    logaa = log --graph --format=\"%C(yellow)%h %C(red)%cd %C(reset)%s %C(green)%<(18,trunc)%cn\" --date=\"format:%d %b %H:%M:%S\"
+
