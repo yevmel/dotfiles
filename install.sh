@@ -12,7 +12,7 @@ else
     ln -s $DOTFILES/vimrc ~/.vimrc
     ln -s $DOTFILES/gitignore ~/.gitignore
     ln -s $DOTFILES/gitconfig ~/.gitconfig
-    ln -s $DOTFILES/.editorconfig ~/.editorconfig
+    ln -s $DOTFILES/editorconfig ~/.editorconfig
 
     mkdir -p ~/.gradle && ln -s $DOTFILES/gradle.properties ~/.gradle/
 fi
