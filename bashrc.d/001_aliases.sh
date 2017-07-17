@@ -18,6 +18,6 @@ alias lsof="lsof +c 0 -P"
 alias prettyjson='python -m json.tool'
 
 # requires:
-# - jsontools npm package
 # - pygments python module
-alias jsonx='json | ~/.pyenv/versions/3.6.1/bin/pygmentize -l json'
+alias jsonx='pygmentize -l json'
+alias xmlx='pygmentize -l xml'
