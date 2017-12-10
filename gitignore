@@ -14,6 +14,7 @@ bin/
 
 # gradle
 build/
+.gradle/
 
 # mvn
 target/
@@ -26,3 +27,4 @@ node_modules/
 
 # vagrant
 .vagrant/
+
