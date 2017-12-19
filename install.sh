@@ -11,16 +11,16 @@ else
     echo "export DOTFILES=$PWD" >> ~/.bashrc
     echo "source \$DOTFILES/bashrc" >> ~/.bashrc
 
-    ln -s $DOTFILES/vimrc ~/.vimrc
-    ln -s $DOTFILES/gitignore ~/.gitignore
-    ln -s $DOTFILES/gitconfig ~/.gitconfig
-    ln -s $DOTFILES/editorconfig ~/.editorconfig
+    ln -s $PWD/vimrc ~/.vimrc
+    ln -s $PWD/gitignore ~/.gitignore
+    ln -s $PWD/gitconfig ~/.gitconfig
+    ln -s $PWD/editorconfig ~/.editorconfig
 
     if [ $_OS = 'Linux' ]; then
         echo "[!] TODO: where to putt settings.json for vscode on linux?"
     elif [ $_OS = 'Darwin' ]; then
-        ln -s $DOTFILES/vscode-settings.json ~/Library/Application\ Support/Code\ -\ Insiders/User/settings.json
+        ln -s $PWD/vscode-settings.json ~/Library/Application\ Support/Code\ -\ Insiders/User/settings.json
     fi
 
-    mkdir -p ~/.gradle && ln -s $DOTFILES/gradle.properties ~/.gradle/
+    mkdir -p ~/.gradle && ln -s $PWD/gradle.properties ~/.gradle/
 fi
