@@ -21,3 +21,5 @@ alias prettyjson='python -m json.tool'
 # - pygments python module
 alias jsonx='pygmentize -l json'
 alias xmlx='pygmentize -l xml'
+
+alias mkdirsrc='mkdir -p src/{test,main}/{java,resources}'
