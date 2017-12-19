@@ -15,7 +15,7 @@ fi
 
 # pyenv
 if [ -a ~/.pyenv/version ]; then
-    PATH="$HOME/.pyenv/versions/$(cat ~/.pyenv/version)/bin:$PATH"
+    PATH="$HOME/.pyenv/shims:$PATH"
 fi
 
 #nvm
