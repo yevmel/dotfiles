@@ -21,6 +21,13 @@ fi
 #nvm
 if [ -d "$HOME/.nvm" ]; then
     export NVM_DIR="$HOME/.nvm"
-    . "$NVM_DIR/nvm.sh"
+
+    # installed by brew, may vary elsewhere :(
+    . "/usr/local/opt/nvm/nvm.sh"
+fi
+
+# jenv
+if [ -a ~/.jenv/version ]; then
+    eval "$(jenv init -)";
 fi
 
