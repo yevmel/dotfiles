@@ -1,8 +1,11 @@
 {
     "editor.quickSuggestions": false,
-    "files.autoSave": "onWindowChange",
     "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
-    "window.restoreWindows": "none"
+    "window.restoreWindows": "none",
+    "explorer.confirmDelete": false,
+    "typescript.validate.enable": false,
+    "javascript.validate.enable": false,
+    "explorer.confirmDragAndDrop": false
 }
 
