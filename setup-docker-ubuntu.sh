@@ -15,3 +15,6 @@ sudo add-apt-repository \
 
 sudo apt-get update && sudo apt-get install -y docker-ce
 
+mkdir -p $HOME/bin
+curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) \
+     -o $HOME/bin/docker-compose
