@@ -1,6 +1,8 @@
 set nocompatible
 filetype off
 
+set visualbell
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
