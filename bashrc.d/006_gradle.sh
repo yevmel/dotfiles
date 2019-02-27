@@ -3,6 +3,8 @@
 # traverse the directory hierarchy up until finds a gradlew file and executes
 # it with arguments supplied by user
 _GDW_DIR="$(pwd)"
+
+function gdw() {
 while [ "$_GDW_DIR" != "/" ]; do
     echo "[i] looking for gradlew in $_GDW_DIR"
 
@@ -22,4 +24,5 @@ while [ "$_GDW_DIR" != "/" ]; do
 
     _GDW_DIR=$(dirname "$_GDW_DIR")
 done
+}
 
