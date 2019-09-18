@@ -13,6 +13,8 @@ bin/
 .*.swp
 
 # gradle
+gradle/
+gradlew*
 build/
 .gradle/
 
