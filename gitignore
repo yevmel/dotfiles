@@ -30,3 +30,6 @@ node_modules/
 # vagrant
 .vagrant/
 
+# spring boot
+application-private.yml
+
