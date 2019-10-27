@@ -15,6 +15,7 @@ else
     ln -s $PWD/gitignore ~/.gitignore
     ln -s $PWD/gitconfig ~/.gitconfig
     ln -s $PWD/editorconfig ~/.editorconfig
+    ln -s $PWD/npmrc ~/.npmrc
 
     if [ $_OS = 'Linux' ]; then
         echo "[!] TODO: where to putt settings.json for vscode on linux?"
