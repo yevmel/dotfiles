@@ -23,6 +23,6 @@
    prune = true
 
 [alias]
-    loga  = log --graph --format=\"%C(yellow)%h %C(red)%cd %C(reset)%s\" --date=\"format:%d %b %H:%M:%S\"
-    logaa = log --graph --format=\"%C(yellow)%h %C(red)%cd %C(reset)%s %C(green)%<(18,trunc)%cn\" --date=\"format:%d %b %H:%M:%S\"
+    loga  = log --format=\"%C(yellow)%h %C(red)%cd %C(reset)%s\" --date=\"format:%d %b %H:%M:%S\"
+    logaa = log --format=\"%C(yellow)%h %C(red)%cd %C(reset)%s %C(green)%<(18,trunc)%cn\" --date=\"format:%d %b %H:%M:%S\"
 
