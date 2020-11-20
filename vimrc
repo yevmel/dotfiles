@@ -3,15 +3,6 @@ filetype off
 
 set visualbell
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
-Plugin 'terryma/vim-expand-region'
-
-call vundle#end()
 filetype plugin on
 
 function! SetupCustomMappings()
