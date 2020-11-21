@@ -38,6 +38,7 @@ function! SetupCustomSettings()
     set ignorecase
     set background=light
     set diffopt+=vertical
+    set backspace=indent,eol,start
     syntax on
 endfunction
 call SetupCustomSettings()
