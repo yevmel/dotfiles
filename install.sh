@@ -18,7 +18,7 @@ else
     ln -s $PWD/npmrc ~/.npmrc
 
     if [ $_OS = 'Linux' ]; then
-        echo "[!] TODO: where to putt settings.json for vscode on linux?"
+        ln -s $PWD/vscode-settings.json ~/.config/Code/User/settings.json
     elif [ $_OS = 'Darwin' ]; then
         ln -s $PWD/vscode-settings.json ~/Library/Application\ Support/Code\ -\ Insiders/User/settings.json
         ln -s $PWD/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
