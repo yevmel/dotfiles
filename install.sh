@@ -17,6 +17,8 @@ else
     ln -s $PWD/editorconfig ~/.editorconfig
     ln -s $PWD/npmrc ~/.npmrc
 
+    mkdir -p .config/htop && ln -s $PWD/htoprc ~/.config/htop/htoprc
+
     if [ $_OS = 'Linux' ]; then
         ln -s $PWD/vscode-settings.json ~/.config/Code/User/settings.json
     elif [ $_OS = 'Darwin' ]; then
