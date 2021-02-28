@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-_OS=$(uname -r)
+_OS=$(uname -s)
 
 grep -q DOTFILES ~/.bashrc
 if [ $? -eq 0 ];then
