@@ -25,6 +25,4 @@ else
         ln -s $PWD/vscode-settings.json ~/Library/Application\ Support/Code\ -\ Insiders/User/settings.json
         ln -s $PWD/vscode-settings.json ~/Library/Application\ Support/Code/User/settings.json
     fi
-
-    mkdir -p ~/.gradle && ln -s $PWD/gradle.properties ~/.gradle/
 fi
