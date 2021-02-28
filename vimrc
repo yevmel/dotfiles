@@ -36,7 +36,7 @@ function! SetupCustomSettings()
     set hlsearch
     set incsearch
     set ignorecase
-    set background=dark
+    set background=light
     set diffopt+=vertical
     set backspace=indent,eol,start
     syntax on
