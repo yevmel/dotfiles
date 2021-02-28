@@ -6,6 +6,8 @@
     "explorer.confirmDelete": false,
     "typescript.validate.enable": false,
     "javascript.validate.enable": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "workbench.tree.indent": 32,
+    "workbench.colorTheme": "Default Light+"
 }
 
