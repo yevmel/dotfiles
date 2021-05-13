@@ -20,6 +20,7 @@ else
     mkdir -p $HOME/.config/htop && ln -s $PWD/htoprc ~/.config/htop/htoprc
 
     if [ $_OS = 'Linux' ]; then
+	mkdir -p ~/.config/Code/User
         ln -s $PWD/vscode-settings.json ~/.config/Code/User/settings.json
     elif [ $_OS = 'Darwin' ]; then
         ln -s $PWD/vscode-settings.json ~/Library/Application\ Support/Code\ -\ Insiders/User/settings.json
