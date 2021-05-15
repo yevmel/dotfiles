@@ -3,6 +3,7 @@
 _OS=$(uname -s)
 
 for i in $DOTFILES/bashrc.d/*; do
-    echo "[i] source $i"
+    # echo in .bashrc sometimes causes problems with git over ssh
+    # echo "[i] source $i"
     source $i
 done
