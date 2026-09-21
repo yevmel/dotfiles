@@ -15,11 +15,5 @@ alias la="ls -a"
 # +c 0 : display the whole name of process
 alias lsof="lsof +c 0 -P"
 
-alias prettyjson='python -m json.tool'
-
-# requires:
-# - pygments python module
-alias jsonx='pygmentize -l json'
-alias xmlx='pygmentize -l xml'
-
 alias mkdirsrc='mkdir -p src/{test,main}/{java,resources}'
+
