@@ -16,4 +16,4 @@ alias la="ls -a"
 alias lsof="lsof +c 0 -P"
 
 alias mkdirsrc='mkdir -p src/{test,main}/{java,resources}'
-
+alias t="tree -L 2"
