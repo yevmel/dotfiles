@@ -28,4 +28,5 @@
     logaa = log --format=\"%C(yellow)%h %C(red)%cd %C(reset)%s %C(green)%<(18,trunc)%cn\" --date=\"format:%d %b %H:%M:%S\"
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
