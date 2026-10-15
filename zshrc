@@ -13,7 +13,11 @@ autoload -Uz compinit
 (( ${+_comps[docker]} )) || compinit
 # End of Docker CLI completions
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/melnichuk/.lmstudio/bin"
-# End of LM Studio CLI section
+alias t="tree -L 2"
+alias ll="ls -lh"
+alias la="ls -a"
+
+# -P   : display port numbers instead of service names
+# +c 0 : display the whole name of process
+alias lsof="lsof +c 0 -P"
 
