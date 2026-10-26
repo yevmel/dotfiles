@@ -2,19 +2,36 @@
 
 _OS=$(uname -s)
 
+# appends a line to a file, unless the file already contains it
+append_once() {
+    touch "$1"
+    grep -qxF "$2" "$1" || echo "$2" >> "$1"
+}
+
+# links source to target, unless the link exists already; never replaces other files
+link() {
+    if [ "$(readlink "$2")" = "$1" ]; then
+        return
+    elif [ -e "$2" ] || [ -L "$2" ]; then
+        echo "[!] $2 exists already, skipping"
+    else
+        ln -s "$1" "$2"
+    fi
+}
+
 echo "[i] setting up DOTFILES"
 
-echo "export DOTFILES=$PWD" >> ~/.bashrc
-echo "source \$DOTFILES/bashrc" >> ~/.bashrc
+append_once ~/.bashrc "export DOTFILES=$PWD"
+append_once ~/.bashrc "source \$DOTFILES/bashrc"
 
-echo "export DOTFILES=$PWD" >> ~/.zshrc
-echo "source \$DOTFILES/zshrc" >> ~/.zshrc
+append_once ~/.zshrc "export DOTFILES=$PWD"
+append_once ~/.zshrc "source \$DOTFILES/zshrc"
 
-ln -s $PWD/vimrc ~/.vimrc
-ln -s $PWD/gitignore ~/.gitignore
-ln -s $PWD/gitconfig ~/.gitconfig
-ln -s $PWD/editorconfig ~/.editorconfig
-ln -s $PWD/npmrc ~/.npmrc
+link $PWD/vimrc ~/.vimrc
+link $PWD/gitignore ~/.gitignore
+link $PWD/gitconfig ~/.gitconfig
+link $PWD/editorconfig ~/.editorconfig
+link $PWD/npmrc ~/.npmrc
 
 # mkdir -p $HOME/.config/htop && ln -s $PWD/htoprc ~/.config/htop/htoprc
 
