@@ -7,7 +7,7 @@ echo "[i] setting up DOTFILES"
 echo "export DOTFILES=$PWD" >> ~/.bashrc
 echo "source \$DOTFILES/bashrc" >> ~/.bashrc
 
-echo "export DOTFILES=$PWD" >> ~/.bashrc
+echo "export DOTFILES=$PWD" >> ~/.zshrc
 echo "source \$DOTFILES/zshrc" >> ~/.zshrc
 
 ln -s $PWD/vimrc ~/.vimrc

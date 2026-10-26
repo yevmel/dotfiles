@@ -12,13 +12,14 @@ while [ "$_GDW_DIR" != "/" ]; do
         echo "[i] found gradlew in $_GDW_DIR"
 
         _GDW_EXEC="$_GDW_DIR/gradlew"
-        _GDW_OPTS="--stacktrace"
+        # array instead of a string, since zsh does not word-split variables
+        _GDW_OPTS=(--stacktrace)
 
         if [ -f "$_GDW_DIR/init.gradle" ]; then
-            _GDW_OPTS="$_GDW_OPTS -I $_GDW_DIR/init.gradle"
+            _GDW_OPTS+=(-I "$_GDW_DIR/init.gradle")
         fi
 
-        "$_GDW_EXEC" $_GDW_OPTS "$@"
+        "$_GDW_EXEC" "${_GDW_OPTS[@]}" "$@"
         break
     fi
 
