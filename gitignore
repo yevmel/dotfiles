@@ -1,6 +1,11 @@
-.worktrees
+.worktrees/
 
-.svn
+.playwright-cli/
+
+.svn/
+
+# python
+*.pyc
 
 # eclipse
 .project
